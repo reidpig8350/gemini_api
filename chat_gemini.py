@@ -28,4 +28,4 @@ while True:
 
   # 限制對話歷史記錄為最近五則
   if len(history) > 5:
-    history.pop(1)
+    history.pop(0)

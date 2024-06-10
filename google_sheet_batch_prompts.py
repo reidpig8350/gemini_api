@@ -9,16 +9,13 @@ SPREADSHEET_ID = '1Y9CjrctN9YHrKHG2P_9n85VNn8_8B-OgY6xdYvdkXwM'
 SHEET_NAME = 'fintech_lesson'
 
 # Gemini API 設定
-with open('gemini_key.txt', 'r') as file:
-  gemini_key = file.read()
-genai.configure(api_key=gemini_key)
+# with open('gemini_key.txt', 'r') as file:
+#   gemini_key = file.read()
+# genai.configure(api_key=gemini_key)
 
-# 設定對話歷史記錄
-history = []
 # 連接 Gemini API
+import gemini_response
 model = genai.GenerativeModel('gemini-1.5-pro')
-# 開始對話
-chat = model.start_chat(history=history)
 
 # 驗證 Google Sheets API
 import gspread
@@ -37,10 +34,10 @@ prompts = sheet.col_values(1)[1:]  # 假設第一列是標題列
 for i, prompt in enumerate(prompts):
   if prompt:
     if i > 0:
-        time.sleep(0.65)
+        time.sleep(0.7)
 
     # 呼叫 Gemini API
-    response = chat.send_message(prompt)
+    response = gemini_response.gemini_response(prompt)
 
     # 處理 API 回應
     response_text = response.text
