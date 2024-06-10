@@ -1,8 +1,11 @@
 import google.generativeai as genai
 import pprint
 
-api_key = "AIzaSyCltdPSPhXW9gTJSTy4j-jMWHt7sg76ESA"
-genai.configure(api_key=api_key)
+with open('gemini_key.txt', 'r') as file:
+  gemini_key = file.read()
+genai.configure(api_key=gemini_key)
+
+genai.configure(api_key=gemini_key)
 
 for model in genai.list_models():
     pprint.pprint(model)
