@@ -8,11 +8,6 @@ CREDS_FILE = 'gcp_key.json'  # 將你的credentials.json檔案放到同一個資
 SPREADSHEET_ID = '1Y9CjrctN9YHrKHG2P_9n85VNn8_8B-OgY6xdYvdkXwM'
 SHEET_NAME = 'fintech_lesson'
 
-# Gemini API 設定
-# with open('gemini_key.txt', 'r') as file:
-#   gemini_key = file.read()
-# genai.configure(api_key=gemini_key)
-
 # 連接 Gemini API
 import gemini_response
 model = genai.GenerativeModel('gemini-1.5-pro')

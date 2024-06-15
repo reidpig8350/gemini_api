@@ -10,7 +10,7 @@ genai.configure(api_key=gemini_key)
 history = []
 
 # 連接 Gemini API
-model = genai.GenerativeModel('gemini-1.5-pro')
+model = genai.GenerativeModel('gemini-1.5-flash')
 
 # 開始對話
 chat = model.start_chat(history=history)
