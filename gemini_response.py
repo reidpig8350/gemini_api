@@ -9,4 +9,4 @@ def gemini_response(user_message):
     model = genai.GenerativeModel('gemini-1.5-flash')
     chat = model.start_chat(history=[])
     response = chat.send_message(user_message)
-    return 
+    return response
